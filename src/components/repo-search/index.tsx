@@ -1,8 +1,7 @@
 import { Octokit } from 'octokit';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 const { Repo } = require('./../../models/interfaces/repo');
-const { GIT_TOKEN, GIT_REPO, GITHUB_APP_CLIENT_ID, GITHUB_APP_REDIRECT_URI } = require('./../../config/config');
+const { OAUTHACCESSTOKEN, GITHUB_APP_CLIENT_ID, GITHUB_APP_REDIRECT_URI } = require('./../../config/config');
 const { extractRepoInfo } = require('./../../utilities/repo')
 
 function RepoSearch() {
@@ -11,8 +10,7 @@ function RepoSearch() {
     const [repos, setRepos] = useState<any[]>([]);
     const [selectedRepo, setSelectedRepo] = useState<string>('');
     const [issueList, setIssueList] = useState<any[]>([]);
-    const oAuthAccessToken = 'ghu_OvU9vWYninKURADstRA2Im3kZj62BZ1esfTH';
-    const octokit = new Octokit({ auth: oAuthAccessToken });
+    const octokit = new Octokit({ auth: OAUTHACCESSTOKEN });
     useEffect(() => {
 
         const getUserData = async () => {
