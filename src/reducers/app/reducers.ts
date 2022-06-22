@@ -1,12 +1,13 @@
 import { createReducer, PayloadAction } from '@reduxjs/toolkit';
+import { Repo } from './../../models/interfaces/repo';
+import { Issue } from './../../models/interfaces/issue';
 import { setAccessToken, setUsername } from './actions';
 
-// TODO: finalize the types
 export interface AppState {
     username: string;
     accessToken: string;
-    issueList: any[];
-    repoList: any[];
+    issueList: Issue[];
+    repoList: Repo[];
 }
 
 const initialState: AppState = {
