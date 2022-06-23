@@ -1,9 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { store } from './reducers';
+import { Provider } from 'react-redux';
+import App from './components/app';
 
-function render() {
-  ReactDOM.render(<h2>Hello from React!</h2>, document.body);
-}
-
-render();
-
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.body,
+);
