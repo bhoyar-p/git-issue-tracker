@@ -1,10 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-function App() {
-
-    return (<div>
-        App Home
-    </div>);
-}
+const App = () => <div>App Home</div>;
 
 export default App;
